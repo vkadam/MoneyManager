@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.vkadam.moneymanager"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="17" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/label_app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.vkadam.moneymanager.MainActivity"
+            android:label="@string/label_app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.vkadam.moneymanager.AccountListActivity"
+            android:label="@string/lable_accounts" >
+        </activity>
+        <activity
+            android:name="com.vkadam.moneymanager.AccountDetailActivity"
+            android:label="@string/label_account_detail"
+            android:parentActivityName=".AccountListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".AccountListActivity" />
+        </activity>
+    </application>
+
+</manifest>
