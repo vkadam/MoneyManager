@@ -9,4 +9,8 @@
     <string name="lable_accounts">Accounts</string>
     <string name="label_account_detail">Account Detail</string>
 
+    <string name="navigation_accounts">Accounts</string>
+    <string name="navigation_payees">Payees</string>
+    <string name="navigation_categories">Categories</string>
+
 </resources>

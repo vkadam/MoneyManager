@@ -1,13 +1,13 @@
 package com.vkadam.moneymanager.navigation;
 
-import android.app.Activity;
 import android.content.Intent;
+import android.support.v4.app.FragmentActivity;
 import android.view.MenuItem;
 
 import com.vkadam.moneymanager.AccountListActivity;
 import com.vkadam.moneymanager.R;
 
-public class ActionBarNavigator extends Activity {
+public class ActionBarNavigator extends FragmentActivity {
     
     @Override
     public boolean onMenuItemSelected(int featureId, MenuItem item) {

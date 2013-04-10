@@ -1,5 +1,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_account_twopane"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginLeft="16dp"
@@ -21,17 +22,17 @@
     http://developer.android.com/training/multiscreen/screensizes.html#TaskUseAliasFilters
     -->
 
-    <fragment
-        android:id="@+id/account_list"
+    <!-- <fragment
+        android:id="@+id/fragment_account_list"
         android:name="com.vkadam.moneymanager.AccountListFragment"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         tools:layout="@android:layout/list_content" />
 
-    <FrameLayout
-        android:id="@+id/account_detail_container"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="3" />
+    <fragment
+        android:id="@+id/fragment_account_details"
+        android:name="com.vkadam.moneymanager.AccountDetailFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" /> -->
 
 </LinearLayout>

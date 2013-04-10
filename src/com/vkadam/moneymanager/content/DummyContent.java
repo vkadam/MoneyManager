@@ -1,4 +1,4 @@
-package com.vkadam.moneymanager.dummy;
+package com.vkadam.moneymanager.content;
 
 import java.util.ArrayList;
 import java.util.HashMap;

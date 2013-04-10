@@ -2,19 +2,39 @@ package com.vkadam.moneymanager;
 
 import android.app.ActionBar;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
+import android.view.MenuItem;
 
-import com.vkadam.moneymanager.R;
-import com.vkadam.moneymanager.navigation.ActionBarNavigator;
+import com.slidingmenu.lib.SlidingMenu;
 
-public class MainActivity extends ActionBarNavigator {
+public class MainActivity extends FragmentActivity implements MainNavigationFragment.Callbacks {
+    
+    private SlidingMenu menu;
     
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
         setContentView(R.layout.activity_main);
+        
         ActionBar actionBar = getActionBar();
         actionBar.setDisplayShowTitleEnabled(false);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        
+        //configure the SlidingMenu
+        menu = new SlidingMenu(this);
+        menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+        
+        menu.setShadowWidthRes(R.dimen.sliding_shadow_width);
+        menu.setShadowDrawable(R.drawable.shadow);
+        
+        menu.setBehindWidthRes(R.dimen.sliding_menu_width);
+        menu.setFadeDegree(0.35f);
+        menu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
+        menu.setMenu(R.layout.main_left_navigation_fragment);
+        
     }
     
     @Override
@@ -22,6 +42,27 @@ public class MainActivity extends ActionBarNavigator {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.activity_main, menu);
         return super.onCreateOptionsMenu(menu);
+    }
+    
+    @Override
+    public void onNavigationItemSelected(Fragment contentFragment) {
+        
+        if (null != contentFragment) {
+            getSupportFragmentManager().beginTransaction()
+                                       .replace(R.id.fragment_main_content, contentFragment)
+                                       .commit();
+        }
+        menu.toggle();
+    }
+    
+    @Override
+    public boolean onMenuItemSelected(int featureId, MenuItem item) {
+        switch (item.getItemId()) {
+        case android.R.id.home:
+            menu.toggle();
+            break;
+        }
+        return super.onMenuItemSelected(featureId, item);
     }
     
 }
