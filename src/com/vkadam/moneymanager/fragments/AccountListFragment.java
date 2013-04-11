@@ -1,11 +1,14 @@
-package com.vkadam.moneymanager;
+package com.vkadam.moneymanager.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.widget.ArrayAdapter;
 
-import com.vkadam.moneymanager.MainNavigationFragment.Callbacks;
-import com.vkadam.moneymanager.content.DummyContent;
+import com.vkadam.moneymanager.R;
+import com.vkadam.moneymanager.content.DummyAccountContent;
+import com.vkadam.moneymanager.fragments.MainNavigationFragment.Callbacks;
 
 /**
  * A list fragment representing a list of Accounts. This fragment also supports tablet devices by allowing list items to
@@ -25,13 +28,17 @@ public class AccountListFragment extends ListFragment {
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        
         super.onCreate(savedInstanceState);
-        
-        // TODO: replace with a real list adapter.
-        setListAdapter(new ArrayAdapter<DummyContent.DummyItem>(getActivity(),
-                                                                android.R.layout.simple_list_item_activated_1,
-                                                                android.R.id.text1, DummyContent.ITEMS));
+        setListAdapter(new ArrayAdapter<DummyAccountContent.DummyItem>(getActivity(),
+                                                                       android.R.layout.simple_list_item_activated_1,
+                                                                       android.R.id.text1, DummyAccountContent.ITEMS));
+        setHasOptionsMenu(true);
+    }
+    
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.fragment_account_list, menu);
+        super.onCreateOptionsMenu(menu, inflater);
     }
     
 }

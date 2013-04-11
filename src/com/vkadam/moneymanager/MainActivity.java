@@ -8,10 +8,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.slidingmenu.lib.SlidingMenu;
+import com.vkadam.moneymanager.fragments.MainNavigationFragment;
 
 public class MainActivity extends FragmentActivity implements MainNavigationFragment.Callbacks {
     
-    private SlidingMenu menu;
+    private SlidingMenu slidingMenu;
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -24,16 +25,16 @@ public class MainActivity extends FragmentActivity implements MainNavigationFrag
         actionBar.setDisplayHomeAsUpEnabled(true);
         
         //configure the SlidingMenu
-        menu = new SlidingMenu(this);
-        menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+        slidingMenu = new SlidingMenu(this);
+        slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
         
-        menu.setShadowWidthRes(R.dimen.sliding_shadow_width);
-        menu.setShadowDrawable(R.drawable.shadow);
+        slidingMenu.setShadowWidthRes(R.dimen.sliding_shadow_width);
+        slidingMenu.setShadowDrawable(R.drawable.shadow);
         
-        menu.setBehindWidthRes(R.dimen.sliding_menu_width);
-        menu.setFadeDegree(0.35f);
-        menu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
-        menu.setMenu(R.layout.main_left_navigation_fragment);
+        slidingMenu.setBehindWidthRes(R.dimen.sliding_menu_width);
+        slidingMenu.setFadeDegree(0.35f);
+        slidingMenu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
+        slidingMenu.setMenu(R.layout.main_left_navigation_fragment);
         
     }
     
@@ -52,14 +53,14 @@ public class MainActivity extends FragmentActivity implements MainNavigationFrag
                                        .replace(R.id.fragment_main_content, contentFragment)
                                        .commit();
         }
-        menu.toggle();
+        slidingMenu.toggle();
     }
     
     @Override
     public boolean onMenuItemSelected(int featureId, MenuItem item) {
         switch (item.getItemId()) {
         case android.R.id.home:
-            menu.toggle();
+            slidingMenu.toggle();
             break;
         }
         return super.onMenuItemSelected(featureId, item);

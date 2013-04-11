@@ -10,7 +10,7 @@ import java.util.Map;
  * <p>
  * TODO: Replace all uses of this class before publishing your app.
  */
-public class DummyContent {
+public class DummyPayeesContent {
     
     /**
      * An array of sample (dummy) items.
@@ -24,9 +24,9 @@ public class DummyContent {
     
     static {
         // Add 3 sample items.
-        addItem(new DummyItem("1", "Item 1"));
-        addItem(new DummyItem("2", "Item 2"));
-        addItem(new DummyItem("3", "Item 3"));
+        addItem(new DummyItem("1", "Payee 1"));
+        addItem(new DummyItem("2", "Payee 2"));
+        addItem(new DummyItem("3", "Payee 3"));
     }
     
     private static void addItem(DummyItem item) {

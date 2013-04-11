@@ -1,4 +1,4 @@
-package com.vkadam.moneymanager;
+package com.vkadam.moneymanager.fragments;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,6 +14,8 @@ import android.view.View;
 import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.vkadam.moneymanager.R;
 
 /**
  * A list fragment representing a Main Navigation.
@@ -140,6 +142,9 @@ public class MainNavigationFragment extends ListFragment {
             switch (navigationItem.id) {
             case 1:
                 navigationItem.contentFragment = new AccountListFragment();
+                break;
+            case 2:
+                navigationItem.contentFragment = new PayeeListFragment();
                 break;
             }
         }
