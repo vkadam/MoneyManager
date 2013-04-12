@@ -2,16 +2,15 @@
 <resources>
 
     <string name="label_app_name">Money Manager</string>
-    <string name="label_action_settings">Settings</string>
+    <string name="label_app_settings">Settings</string>
     <string name="label_add_account">Add Account</string>
     <string name="label_add_payee">Add Payee</string>
     <string name="label_trans_date">Date</string>
-    <string name="label_welcome">Expense Manager Application \nby Vishal Kadam</string>
     <string name="lable_accounts">Accounts</string>
     <string name="label_account_detail">Account Detail</string>
-
     <string name="navigation_accounts">Accounts</string>
     <string name="navigation_payees">Payees</string>
     <string name="navigation_categories">Categories</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>

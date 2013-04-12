@@ -141,58 +141,43 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int shadow=0x7f020002;
     }
     public static final class id {
-        public static final int action_settings=0x7f040009;
-        public static final int add_account=0x7f04000a;
-        public static final int add_payee=0x7f04000b;
-        public static final int fragment_main_content=0x7f040006;
-        public static final int fragment_main_left_navigation=0x7f040007;
         public static final int fullscreen=0x7f040003;
-        public static final int layout_account_twopane=0x7f040005;
+        public static final int label_account_name=0x7f040005;
+        public static final int layout_activity_main=0x7f040006;
+        public static final int layout_fragment_main_navigation=0x7f040007;
         public static final int left=0x7f040000;
         public static final int margin=0x7f040002;
+        public static final int menu_add_account=0x7f04000a;
+        public static final int menu_add_payee=0x7f04000b;
+        public static final int menu_app_settings=0x7f040009;
         public static final int right=0x7f040001;
         public static final int selected_view=0x7f040004;
         public static final int slidingmenumain=0x7f040008;
     }
     public static final class layout {
-        /** 
-    Layout alias to replace the single-pane version of the layout with a
-    two-pane version on Large screens.
-
-    For more on layout aliases, see:
-    http://developer.android.com/training/multiscreen/screensizes.html#TaskUseAliasFilters
-    
-
-    Layout alias to replace the single-pane version of the layout with a
-    two-pane version on Large screens.
-
-    For more on layout aliases, see:
-    http://developer.android.com/training/multiscreen/screensizes.html#TaskUseAliasFilters
-    
-         */
-        public static final int activity_account_list=0x7f030004;
-        public static final int activity_account_twopane=0x7f030000;
+        public static final int activity_account_detail=0x7f030000;
         public static final int activity_main=0x7f030001;
-        public static final int main_left_navigation_fragment=0x7f030002;
+        public static final int fragment_main_navigation=0x7f030002;
         public static final int slidingmenumain=0x7f030003;
     }
     public static final class menu {
-        public static final int activity_main=0x7f080000;
-        public static final int fragment_account_list=0x7f080001;
-        public static final int fragment_payee_list=0x7f080002;
+        public static final int activity_account_detail=0x7f080000;
+        public static final int activity_main=0x7f080001;
+        public static final int fragment_account_list=0x7f080002;
+        public static final int fragment_payee_list=0x7f080003;
     }
     public static final class string {
-        public static final int label_account_detail=0x7f060007;
-        public static final int label_action_settings=0x7f060001;
+        public static final int hello_world=0x7f06000a;
+        public static final int label_account_detail=0x7f060006;
         public static final int label_add_account=0x7f060002;
         public static final int label_add_payee=0x7f060003;
         public static final int label_app_name=0x7f060000;
+        public static final int label_app_settings=0x7f060001;
         public static final int label_trans_date=0x7f060004;
-        public static final int label_welcome=0x7f060005;
-        public static final int lable_accounts=0x7f060006;
-        public static final int navigation_accounts=0x7f060008;
-        public static final int navigation_categories=0x7f06000a;
-        public static final int navigation_payees=0x7f060009;
+        public static final int lable_accounts=0x7f060005;
+        public static final int navigation_accounts=0x7f060007;
+        public static final int navigation_categories=0x7f060009;
+        public static final int navigation_payees=0x7f060008;
     }
     public static final class style {
         /** 

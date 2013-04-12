@@ -1,11 +1,17 @@
 package com.vkadam.moneymanager.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
+import com.vkadam.moneymanager.AccountDetailActivity;
 import com.vkadam.moneymanager.R;
 import com.vkadam.moneymanager.content.DummyAccountContent;
 import com.vkadam.moneymanager.fragments.MainNavigationFragment.Callbacks;
@@ -18,6 +24,10 @@ import com.vkadam.moneymanager.fragments.MainNavigationFragment.Callbacks;
  * Activities containing this fragment MUST implement the {@link Callbacks} interface.
  */
 public class AccountListFragment extends ListFragment {
+    
+    private static final String LOG_TAG_NAME = AccountListFragment.class.getCanonicalName();
+    
+    public static final String ACCOUNT_ID_KEY = "ACCOUNT_ID_KEY";
     
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the fragment (e.g. upon screen orientation
@@ -41,4 +51,27 @@ public class AccountListFragment extends ListFragment {
         super.onCreateOptionsMenu(menu, inflater);
     }
     
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+        case R.id.menu_add_account:
+            Intent intent = new Intent(getActivity(), AccountDetailActivity.class);
+            Log.d(LOG_TAG_NAME, "Starting Account Details Activity for new account...");
+            startActivity(intent);
+            return super.onOptionsItemSelected(item);
+        default:
+            return super.onOptionsItemSelected(item);
+        }
+    }
+    
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+        
+        Intent intent = new Intent(getActivity(), AccountDetailActivity.class);
+        intent.putExtra(ACCOUNT_ID_KEY, position);
+        Log.d(LOG_TAG_NAME, "Starting Account Details Activity for " + position + "...");
+        startActivity(intent);
+        
+    }
 }

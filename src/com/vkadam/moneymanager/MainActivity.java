@@ -3,14 +3,13 @@ package com.vkadam.moneymanager;
 import android.app.ActionBar;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.slidingmenu.lib.SlidingMenu;
 import com.vkadam.moneymanager.fragments.MainNavigationFragment;
 
-public class MainActivity extends FragmentActivity implements MainNavigationFragment.Callbacks {
+public class MainActivity extends BaseActivity implements MainNavigationFragment.Callbacks {
     
     private SlidingMenu slidingMenu;
     
@@ -34,7 +33,7 @@ public class MainActivity extends FragmentActivity implements MainNavigationFrag
         slidingMenu.setBehindWidthRes(R.dimen.sliding_menu_width);
         slidingMenu.setFadeDegree(0.35f);
         slidingMenu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
-        slidingMenu.setMenu(R.layout.main_left_navigation_fragment);
+        slidingMenu.setMenu(R.layout.fragment_main_navigation);
         
     }
     
@@ -49,9 +48,7 @@ public class MainActivity extends FragmentActivity implements MainNavigationFrag
     public void onNavigationItemSelected(Fragment contentFragment) {
         
         if (null != contentFragment) {
-            getSupportFragmentManager().beginTransaction()
-                                       .replace(R.id.fragment_main_content, contentFragment)
-                                       .commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.layout_activity_main, contentFragment).commit();
         }
         slidingMenu.toggle();
     }
