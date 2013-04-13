@@ -12,5 +12,10 @@
     <string name="navigation_payees">Payees</string>
     <string name="navigation_categories">Categories</string>
     <string name="hello_world">Hello world!</string>
+    <string name="prompt_account_name">Account Name</string>
+    <string name="prompt_account_balance">Initial Balance</string>
+    <string name="prompt_account_note">Account Note</string>
+    <string name="promot_account_currency">Currency</string>
+    <string name="button_amount_sign">Sign</string>
 
 </resources>

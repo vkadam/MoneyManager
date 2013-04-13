@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
+import android.widget.EditText;
 
 import com.vkadam.moneymanager.content.DummyAccountContent;
 import com.vkadam.moneymanager.content.DummyAccountContent.DummyItem;
@@ -28,7 +28,7 @@ public class AccountDetailActivity extends BaseActivity {
         if (accountRecordPosition != -1) {
             DummyItem dummyAccount = DummyAccountContent.ITEMS.get(accountRecordPosition);
             
-            TextView accountNameLabel = (TextView) findViewById(R.id.label_account_name);
+            EditText accountNameLabel = (EditText) findViewById(R.id.input_account_name);
             accountNameLabel.setText(dummyAccount.name);
         }
         
