@@ -2,15 +2,12 @@ package com.vkadam.moneymanager.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.ListFragment;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.actionbarsherlock.app.SherlockListFragment;
 import com.vkadam.moneymanager.AccountDetailActivity;
 import com.vkadam.moneymanager.R;
 import com.vkadam.moneymanager.content.DummyAccountContent;
@@ -23,7 +20,7 @@ import com.vkadam.moneymanager.fragments.MainNavigationFragment.Callbacks;
  * <p>
  * Activities containing this fragment MUST implement the {@link Callbacks} interface.
  */
-public class AccountListFragment extends ListFragment {
+public class AccountListFragment extends SherlockListFragment {
     
     private static final String LOG_TAG_NAME = AccountListFragment.class.getCanonicalName();
     
@@ -46,13 +43,15 @@ public class AccountListFragment extends ListFragment {
     }
     
     @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+    public void onCreateOptionsMenu(com.actionbarsherlock.view.Menu menu,
+                                    com.actionbarsherlock.view.MenuInflater inflater) {
         inflater.inflate(R.menu.fragment_account_list, menu);
+        
         super.onCreateOptionsMenu(menu, inflater);
     }
     
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(com.actionbarsherlock.view.MenuItem item) {
         switch (item.getItemId()) {
         case R.id.menu_add_account:
             Intent intent = new Intent(getActivity(), AccountDetailActivity.class);

@@ -1,11 +1,9 @@
 package com.vkadam.moneymanager;
 
-import android.app.ActionBar;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.Menu;
-import android.view.MenuItem;
 
+import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.app.SherlockListFragment;
 import com.slidingmenu.lib.SlidingMenu;
 import com.vkadam.moneymanager.fragments.MainNavigationFragment;
 
@@ -19,7 +17,7 @@ public class MainActivity extends BaseActivity implements MainNavigationFragment
         
         setContentView(R.layout.activity_main);
         
-        ActionBar actionBar = getActionBar();
+        ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowTitleEnabled(false);
         actionBar.setDisplayHomeAsUpEnabled(true);
         
@@ -38,14 +36,14 @@ public class MainActivity extends BaseActivity implements MainNavigationFragment
     }
     
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(com.actionbarsherlock.view.Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.activity_main, menu);
+        
+        getSupportMenuInflater().inflate(R.menu.activity_main, menu);
         return super.onCreateOptionsMenu(menu);
     }
     
-    @Override
-    public void onNavigationItemSelected(Fragment contentFragment) {
+    public void onNavigationItemSelected(SherlockListFragment contentFragment) {
         
         if (null != contentFragment) {
             getSupportFragmentManager().beginTransaction().replace(R.id.layout_activity_main, contentFragment).commit();
@@ -54,7 +52,7 @@ public class MainActivity extends BaseActivity implements MainNavigationFragment
     }
     
     @Override
-    public boolean onMenuItemSelected(int featureId, MenuItem item) {
+    public boolean onMenuItemSelected(int featureId, com.actionbarsherlock.view.MenuItem item) {
         switch (item.getItemId()) {
         case android.R.id.home:
             slidingMenu.toggle();

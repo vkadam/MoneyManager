@@ -8,13 +8,12 @@ import java.util.Map;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.ListFragment;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.actionbarsherlock.app.SherlockListFragment;
 import com.vkadam.moneymanager.R;
 
 /**
@@ -23,7 +22,7 @@ import com.vkadam.moneymanager.R;
  * Activities containing this fragment MUST implement the {@link Callbacks} interface.
  */
 
-public class MainNavigationFragment extends ListFragment {
+public class MainNavigationFragment extends SherlockListFragment {
     
     /**
      * A callback interface that all activities containing this fragment must implement. This mechanism allows
@@ -33,7 +32,7 @@ public class MainNavigationFragment extends ListFragment {
         /**
          * Callback for when an item has been selected.
          */
-        public void onNavigationItemSelected(Fragment contentFragment);
+        public void onNavigationItemSelected(SherlockListFragment contentFragment);
     }
     
     /**
@@ -41,8 +40,7 @@ public class MainNavigationFragment extends ListFragment {
      * attached to an activity.
      */
     private static Callbacks sDummyCallbacks = new Callbacks() {
-        @Override
-        public void onNavigationItemSelected(Fragment contentFragment) {
+        public void onNavigationItemSelected(SherlockListFragment contentFragment) {
         }
     };
     
@@ -74,7 +72,7 @@ public class MainNavigationFragment extends ListFragment {
     public static class NavigationItem {
         private int id;
         private String name;
-        private Fragment contentFragment;
+        private SherlockListFragment contentFragment;
         
         public NavigationItem(int resourceId, String content) {
             this.id = resourceId;

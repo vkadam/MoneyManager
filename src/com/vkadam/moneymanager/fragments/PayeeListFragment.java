@@ -1,12 +1,9 @@
 package com.vkadam.moneymanager.fragments;
 
 import android.os.Bundle;
-import android.support.v4.app.ListFragment;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 
+import com.actionbarsherlock.app.SherlockListFragment;
 import com.vkadam.moneymanager.R;
 import com.vkadam.moneymanager.content.DummyPayeesContent;
 import com.vkadam.moneymanager.fragments.MainNavigationFragment.Callbacks;
@@ -18,9 +15,9 @@ import com.vkadam.moneymanager.fragments.MainNavigationFragment.Callbacks;
  * <p>
  * Activities containing this fragment MUST implement the {@link Callbacks} interface.
  */
-public class PayeeListFragment extends ListFragment {
+public class PayeeListFragment extends SherlockListFragment {
     
-    private static final String LOG_TAG_NAME = PayeeListFragment.class.getCanonicalName();
+    //    private static final String LOG_TAG_NAME = PayeeListFragment.class.getCanonicalName();
     
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the fragment (e.g. upon screen orientation
@@ -39,13 +36,14 @@ public class PayeeListFragment extends ListFragment {
     }
     
     @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+    public void onCreateOptionsMenu(com.actionbarsherlock.view.Menu menu,
+                                    com.actionbarsherlock.view.MenuInflater inflater) {
         inflater.inflate(R.menu.fragment_payee_list, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
     
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(com.actionbarsherlock.view.MenuItem item) {
         switch (item.getItemId()) {
         case R.id.menu_add_payee:
             
