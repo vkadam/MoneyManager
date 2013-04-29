@@ -1,5 +1,6 @@
 package com.vkadam.moneymanager;
 
+import roboguice.inject.ContentView;
 import android.os.Bundle;
 
 import com.actionbarsherlock.app.ActionBar;
@@ -7,6 +8,7 @@ import com.actionbarsherlock.app.SherlockListFragment;
 import com.slidingmenu.lib.SlidingMenu;
 import com.vkadam.moneymanager.fragments.MainNavigationFragment;
 
+@ContentView(R.layout.activity_main)
 public class MainActivity extends BaseActivity implements MainNavigationFragment.Callbacks {
     
     private SlidingMenu slidingMenu;
@@ -14,8 +16,6 @@ public class MainActivity extends BaseActivity implements MainNavigationFragment
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
-        setContentView(R.layout.activity_main);
         
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowTitleEnabled(false);

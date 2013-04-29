@@ -5,9 +5,9 @@ package com.vkadam.moneymanager;
 
 import android.util.Log;
 
-import com.actionbarsherlock.app.SherlockFragmentActivity;
+import com.github.rtyley.android.sherlock.roboguice.activity.RoboSherlockFragmentActivity;
 
-public abstract class BaseActivity extends SherlockFragmentActivity {
+public abstract class BaseActivity extends RoboSherlockFragmentActivity {
     
     private static final String LOG_TAG_NAME = BaseActivity.class.getCanonicalName();
     

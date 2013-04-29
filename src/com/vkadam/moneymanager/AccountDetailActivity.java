@@ -1,5 +1,6 @@
 package com.vkadam.moneymanager;
 
+import roboguice.inject.ContentView;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.EditText;
@@ -9,6 +10,7 @@ import com.vkadam.moneymanager.content.DummyAccountContent;
 import com.vkadam.moneymanager.content.DummyAccountContent.DummyItem;
 import com.vkadam.moneymanager.fragments.AccountListFragment;
 
+@ContentView(R.layout.activity_account_detail)
 public class AccountDetailActivity extends BaseActivity {
     
     private static final String LOG_TAG_NAME = AccountDetailActivity.class.getCanonicalName();
@@ -16,7 +18,6 @@ public class AccountDetailActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_account_detail);
         
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowTitleEnabled(false);
